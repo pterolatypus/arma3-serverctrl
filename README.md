@@ -12,14 +12,7 @@ This is a fairly simple utility designed for managing multiple modded ArmA 3 ser
 - For best results install in an otherwise empty folder
 - Download steamcmd.exe and place in a subfolder (recommended is 'steam')
 - Run steamcmd.exe to install steam in the same folder
-- Open serverctrl.bat and set the variables there to configure your installation.
-  - STEAMUSER = Your steam username, for downloading the server files or mods. This is used for Auto Mode, but you can leave it unset and enter it manually every time instead.
-  - STEAMPASS = Your steam password. As above.
-  - STEAMDIR = Subfolder containing Steam installation and steamcmd.exe
-  - ARMADIR = Subfolder to install ArmA 3 and mods to.
-  - BRANCH = ArmA 3 branch to install from. It's recommended to leave this as it is.
-  - MODFILE = File containing a list of workshop files to download. More details below.
-  - MODFOLDER = Path to a folder containing mods.
+- Open serverctrl.bat and set the variables there to configure your installation (see Program Variables).
 - Run serverctrl.bat and enjoy
 
 ## Usage
@@ -38,6 +31,14 @@ The '-q' switch will run certain commands in quiet mode, which produces no conso
 
 ### Program variables
 The utility uses a collection of environment variables to store important information. Some of these variables are used for configuration information; those are shown in the serverctrl.bat file and can be viewed and altered from within the application using the 'var' command (and sub-commands)
+
+- STEAMUSER = Your steam username, for downloading the server files or mods. This is used for Auto Mode, but you can leave it unset and enter it manually every time instead.
+- STEAMPASS = Your steam password. As above.
+- STEAMDIR = Subfolder containing Steam installation and steamcmd.exe
+- ARMADIR = Subfolder to install ArmA 3 and mods to.
+- BRANCH = ArmA 3 branch to install from. It's recommended to leave this as it is.
+- MODFILE = File containing a list of workshop files to download. More details below.
+- MODFOLDER = Path to a folder containing mods.
 
 ### Modfile:
 The modfile is a plain-text file containing references to workshop files. Each line is one item in the format:

@@ -2,9 +2,17 @@
 SETLOCAL ENABLEDELAYEDEXPANSION
 
 rem allow passing the server_home as a parameter to the script
-IF NOT [%~1]==[] (
-  SET SERVER_HOME=%~1
-) ELSE (
+FOR %%x IN (%*) DO (
+  SET ARG=%%~x
+  IF "!ARG:~0,1!"=="+" (
+    SET CMD=!ARG:~1!
+  ) ELSE (
+    SET SERVER_HOME=%~1
+  )
+)
+
+rem default server_home is current working directory
+IF NOT DEFINED SERVER_HOME (
   SET SERVER_HOME=%cd%
 )
 
@@ -14,6 +22,13 @@ SET SCRIPTS=!SCRIPTS:~0,-1!
 
 CALL %SCRIPTS%\cfg.bat
 
+rem if a command was passed in, execute it then quit
+IF DEFINED CMD (
+  call :docmd %CMD%
+  EXIT /B
+)
+
+rem otherwise start in interactive mode
 rem input handling loop
 :getinput
 echo.
