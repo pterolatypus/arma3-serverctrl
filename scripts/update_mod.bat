@@ -31,6 +31,17 @@ IF NOT DEFINED MODS IF NOT DEFINED MODIDS (
   SET ALLMODS=TRUE
 )
 
+rem if not auto mode, ask for user configuration
+IF NOT DEFINED AUTO (
+  SET /P ARMADIR="Enter ArmA 3 folder [%ARMADIR%]: "
+  SET /P STEAMDIR="Enter Steam folder [%STEAMDIR%]: "
+  SET /P STEAMUSER="Enter Steam username [%STEAMUSER%]: "
+  rem call out to powershell to hide the password on command line
+  for /f "usebackq tokens=*" %%p in (`powershell -Command "$pword = read-host 'Enter Steam password' -AsSecureString ; $BSTR=[System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($pword); [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)"`) do set STEAMPASS=%%p
+  SET /P MODFILE="Enter mod file location [%MODFILE%]: "
+  SET /P MODFOLDER="Enter mod folder location [%MODFOLDER%]: "
+)
+
 rem loop through the mods file and fetch every mod in there
 IF DEFINED ALLMODS (
   FOR /F %%i IN (%MODFILE%) DO (
@@ -42,19 +53,11 @@ IF DEFINED ALLMODS (
   )
 )
 
-IF NOT DEFINED AUTO (
-  SET /P ARMADIR="Enter ArmA 3 folder [%ARMADIR%]: "
-  SET /P STEAMDIR="Enter Steam folder [%STEAMDIR%]: "
-  SET /P STEAMUSER="Enter Steam username [%STEAMUSER%]: "
-  rem call out to powershell to hide the password on command line
-  for /f "usebackq tokens=*" %%p in (`powershell -Command "$pword = read-host 'Enter Steam password' -AsSecureString ; $BSTR=[System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($pword); [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)"`) do set STEAMPASS=%%p
-  SET /P MODFILE="Enter mod file location [%MODFILE%]: "
-)
-
 SET ARMAPATH=%SERVER_HOME%\!ARMADIR!
 SET STEAMPATH=%SERVER_HOME%\!STEAMDIR!
 SET STEAMLOGIN=%STEAMUSER% %STEAMPASS%
 SET MODFILEPATH=%SERVER_HOME%\!MODFILE!
+SET MODFOlDERPATH=%SERVER_HOME%\!MODFOLDER!
 
 IF NOT DEFINED QUIET (
   echo.
@@ -63,6 +66,7 @@ IF NOT DEFINED QUIET (
   echo        Steam folder: %STEAMPATH%
   echo        User: %STEAMUSER%
   echo        Mod File: %MODFILEPATH%
+  echo        Mod Folder: %MODFOLDERPATH%
   echo.
   pause
 )

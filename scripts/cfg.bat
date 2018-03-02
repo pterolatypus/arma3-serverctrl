@@ -1,5 +1,5 @@
 rem number of program variables
-SET NVARS=7
+SET NVARS=8
 rem names of program variables which can be changed by the user
 SET VARS[1]=SERVER_HOME
 SET VARS[2]=STEAMDIR
@@ -8,6 +8,7 @@ SET VARS[4]=STEAMPASS
 SET VARS[5]=ARMADIR
 SET VARS[6]=BRANCH
 SET VARS[7]=MODFILE
+SET VARS[8]=MODFOLDER
 
 rem non-user-accessible program variables
 SET "TAB=	"

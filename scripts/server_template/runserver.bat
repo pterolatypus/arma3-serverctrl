@@ -3,7 +3,7 @@ SETLOCAL ENABLEDELAYEDEXPANSION
 
 rem location of this script used as server root
 SET svrdir=%~dp0
-SET ARMADIR=%SERVER_HOME%\%ARMADIR%
+SET ARMAPATH=%SERVER_HOME%\%ARMADIR%
 
 IF EXIST %svrdir%pid.txt (
   echo Server already running ^(pid.txt exists^) run "stop [server]" first
@@ -11,9 +11,44 @@ IF EXIST %svrdir%pid.txt (
 EXIT /B %ERR_SERVER_ALREADY_RUNNING%
 )
 
+rem read the mods.txt file to check mods to load
+SET MODS=
+IF EXIST %svrdir%mods.txt (
+  FOR /F %%x IN (%svrdir%mods.txt) DO (
+    SET LINE=%%x
+    rem ignore comments
+    IF NOT "!LINE:~0,2!"=="//" (
+      SET MODS=!MODS! !LINE!
+    )
+  )
+)
+
+rem read through the modfile to find the ids for the mods
+SET MODIDS=
+FOR %%x IN (%MODS%) DO (
+  FOR /F "tokens=1,2" %%i IN (%MODFILEPATH%) DO (
+    SET NAME=%%i
+    rem ignore comments
+    IF NOT "!NAME:~0,2!"=="//" (
+      IF "!NAME!"=="%%x" (
+        SET MODIDS=!MODIDS! %%j
+      )
+    )
+  )
+)
+
+rem construct the modline with full paths
+SET MODPATHS=
+FOR %%x IN (%MODIDS%) DO (
+  SET MODPATHS=!MODPATHS!;%ARMAPATH%\steamapps\workshop\content\%%x
+)
+
+echo.%MODPATHS%
+echo.
+
 rem set up the command to start the server
 rem the ^ character lets you split the command across multiple lines, but you must still include the spaces to separate the parameters
-SET cmd="%ARMADIR%\arma3server.exe"^
+SET cmd="%ARMAPATH%\arma3server.exe"^
  -profiles="%svrdir%profiles"^
  -port=2310^
  -filePatching^
