@@ -17,6 +17,12 @@ This is a fairly simple utility designed for managing multiple modded ArmA 3 ser
 
 ## Usage
 
+### Setting Up Servers:
+Under ServerCtrl a 'server' is a folder containing:
+- runserver.bat - the script used to actually run the server
+- server.cfg - the ArmA server config file
+- a profiles folder where the logs and userdata for that server is stored
+
 ### Commands:
 The utility functions as a simple command-line interface. A small prompt will be displayed and commands can be typed to do various things. A list of commands is available in-app using the "help" or "h" command. Additionally, some commands have their own help pages which can be accessed with "help command".
 
