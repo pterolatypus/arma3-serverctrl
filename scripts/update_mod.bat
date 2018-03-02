@@ -91,6 +91,6 @@ FOR %%x IN (%MODIDS%) DO (
 rem finish off and execute the command
 SET cmd=%cmd% +quit
 IF DEFINED QUIET (
-  SET cmd="%cmd% > nul"
+  SET cmd=%cmd% > nul
 )
 %cmd%
