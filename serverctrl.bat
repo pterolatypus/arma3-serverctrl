@@ -11,4 +11,6 @@ SET MODFILE=modlist.txt
 SET MODFOLDER=
 
 rem Start the application
+rem This assumes that the application is installed in a scripts folder within the current directory,
+rem but it can be anywhere as long as this line points to the correct file.
 CALL scripts\main.bat %*

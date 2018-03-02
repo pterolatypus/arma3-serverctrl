@@ -22,6 +22,9 @@ Under ServerCtrl a 'server' is a folder containing:
 - runserver.bat - the script used to actually run the server
 - server.cfg - the ArmA server config file
 - a profiles folder where the logs and userdata for that server is stored
+The profiles folder is created automatically by the server application; examples of the other two can be found in the scripts/server_template folder.
+
+Within ServerCtrl a server is referred to by its folder name. These folders are expected to be next to the Steam and Arma installation folders in the 'server home' directory. Usually this will be wherever your serverctrl.bat file is.
 
 ### Commands:
 The utility functions as a simple command-line interface. A small prompt will be displayed and commands can be typed to do various things. A list of commands is available in-app using the "help" or "h" command. Additionally, some commands have their own help pages which can be accessed with "help command".
