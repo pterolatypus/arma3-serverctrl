@@ -43,12 +43,12 @@ IF /I "%1"=="start" (
 ) ELSE IF /I "%1"=="var" (
   CALL :vars !subcmd!
 ) ELSE IF /I "%1"=="help" (
-  CALL %SCRIPTS%\printhelp.bat
+  CALL %SCRIPTS%\printhelp.bat !subcmd!
 ) ELSE IF /I "%1"=="x" (
   rem return the terminate code
   EXIT /B %ERR_TERMINATE%
 ) ELSE IF "%1"=="h" (
-  CALL :docmd help
+  CALL :docmd help !subcmd!
 ) ELSE IF "%1"=="exit" (
   rem return the terminate code
   EXIT /B %ERR_TERMINATE%
@@ -73,6 +73,8 @@ SET subcmd=;;;;;%*
 SET subcmd=!subcmd:;;;;;%1 =!
 IF /I "%1"=="set" (
   CALL %SCRIPTS%\set_variable.bat !subcmd!
+) ELSE IF /I [%1]==[] (
+  CALL :vars list
 ) ELSE IF /I "%1"=="list" (
   CALL %SCRIPTS%\list_variables.bat
 ) ELSE (
