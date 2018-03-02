@@ -9,14 +9,6 @@ SET VARS[5]=ARMADIR
 SET VARS[6]=BRANCH
 SET VARS[7]=MODFILE
 
-rem default values of program variables
-SET STEAMUSER=username
-SET STEAMPASS=password
-SET ARMADIR=a3master
-SET BRANCH=233780 -beta
-SET STEAMDIR=steam
-SET MODFILE=modlist.txt
-
 rem non-user-accessible program variables
 SET "TAB=	"
 

@@ -1,8 +1,6 @@
 @echo off
 SETLOCAL ENABLEDELAYEDEXPANSION
 
-
-
 rem allow passing the server_home as a parameter to the script
 IF NOT [%~1]==[] (
   SET SERVER_HOME=%~1
@@ -10,12 +8,9 @@ IF NOT [%~1]==[] (
   SET SERVER_HOME=%cd%
 )
 
-rem allow passing of the scripts path as a parameter
-IF NOT [%~2]==[] (
-  SET SCRIPTS=%~2
-) ELSE (
-  SET SCRIPTS=%SERVER_HOME%\scripts
-)
+rem save the location of this file as the script root
+SET SCRIPTS=%~dp0
+SET SCRIPTS=!SCRIPTS:~0,-1!
 
 CALL %SCRIPTS%\cfg.bat
 
