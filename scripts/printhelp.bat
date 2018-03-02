@@ -21,6 +21,13 @@ echo    clear, cls				clear the terminal
   echo Valid subcommands:
   echo    var list				list program variables and their values
   echo    var set [variable] [value]		set a program variable
+) ELSE IF "%1"=="update-mods" (
+  echo The 'update-mods' command is used to download or update files from the Steam Workshop using steamcmd.exe
+  echo It has various forms:
+  echo    "update-mods" with no parameters will attempt to update all the mods listed in the modfile
+  echo    "update-mods modname [modname2 modname3...]" will attempt to update a subset of mods listed in the file
+  echo    "update-mods [modname1 modname2...] +modid1 [+modid2 +modid3...]" will update ^(optionally^) any number of mods listed in the modfile, as well as a selection of mods referred to by their Workshop ID and not necessarily listed in the file.
+  echo    "update-mods -all +modid [+modid2 +modid3...]" will update all mods listed in the modfile, as well as a selection of mods by Workshop ID
 ) ELSE (
   echo There doesn't seem to be a help page for "%1"
 )

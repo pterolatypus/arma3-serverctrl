@@ -25,8 +25,7 @@ This is a fairly simple utility designed for managing multiple modded ArmA 3 ser
 ## Usage
 
 ### Commands:
-- "help" or "h" will show the command list, and is a more up-to-date reference than this.
-- "update-server" will install or update the ArmA 3 server files. This requires logging into Steam.
+The utility functions as a simple command-line interface. A small prompt will be displayed and commands can be typed to do various things. A list of commands is available in-app using the "help" or "h" command. Additionally, some commands have their own help pages which can be accessed with "help command".
 
 #### Additional command parameters:
 Adding 'switches' onto commands such as 'update-server -auto' can affect their behaviour.
