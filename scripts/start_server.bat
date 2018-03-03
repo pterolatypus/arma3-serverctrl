@@ -65,9 +65,9 @@ SET cmd="%ARMAPATH%\arma3server.exe"^
 rem if there are mods, add a -mod parameter
 IF DEFINED MODPATHS (
   SET cmd=%cmd% -mod=%MODPATHS%
+  echo The server has mods enabled
 )
 
-echo %cmd%
 echo Starting server in %SERVERDIR%\
 
 rem execute the command and save the process ID

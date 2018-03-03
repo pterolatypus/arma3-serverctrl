@@ -71,7 +71,7 @@ IF NOT DEFINED QUIET (
   pause
 )
 
-SET cmd=%STEAMDIR%\steamcmd.exe +login %STEAMLOGIN% +force_install_dir %ARMADIR%
+SET cmd=%STEAMDIR%\steamcmd.exe +login %STEAMLOGIN% +force_install_dir %ARMAPATH%
 
 rem check through the file to grab the actual id and construct the command
 rem loops are a bit back-to-front to reduce file I/O, but it probably doesn't matter
