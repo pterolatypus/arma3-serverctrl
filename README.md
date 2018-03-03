@@ -23,6 +23,7 @@ Under ServerCtrl a 'server' is a folder containing:
 - server.cfg - the ArmA server config file
 - a profiles folder where the logs and userdata for that server is stored
 - (optionally) a mods.txt file containing a list of mods to be run on the server
+
 The profiles folder is created automatically by the server application; examples of the other two can be found in the scripts/server_template folder.
 
 Within ServerCtrl a server is referred to by its folder name. These folders are expected to be next to the Steam and Arma installation folders in the 'server home' directory. Usually this will be wherever your serverctrl.bat file is.
