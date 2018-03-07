@@ -3,7 +3,7 @@ SET target=%1
 
 IF NOT DEFINED target (SET /P %target%="Enter the name of the server to stop: ")
 
-IF NOT EXIST %SERVER_HOME%\%target%\runserver.bat (GOTO :notfound)
+IF NOT EXIST %SERVER_HOME%\%target%\server.cfg (GOTO :notfound)
 SET pidfile=%SERVER_HOME%\%target%\pid.txt
 IF NOT EXIST %pidfile% (GOTO :notrunning)
 
