@@ -1,0 +1,74 @@
+class DifficultyPresets
+{
+	class CustomDifficulty
+	{
+		class Options
+		{
+			groupIndicators=0;
+			friendlyTags=0;
+			enemyTags=0;
+			detectedMines=0;
+			commands=1;
+			waypoints=0;
+			weaponInfo=1;
+			stanceIndicator=1;
+			reducedDamage=0;
+			staminaBar=1;
+			weaponCrosshair=0;
+			visionAid=0;
+			thirdPersonView=0;
+			cameraShake=1;
+			scoreTable=0;
+			deathMessages=0;
+			vonID=1;
+			mapContent=0;
+			autoReport=0;
+			multipleSaves=0;
+		};
+		aiLevelPreset=3;
+	};
+	class CustomAILevel
+	{
+		skillAI=0.60000002;
+		precisionAI=0.40000001;
+	};
+};
+singleVoice=0;
+maxSamplesPlayed=96;
+activeKeys[]=
+{
+	"BIS_HUNT.Winthera3_done",
+	"BIS_QRF_Basev2.clafghan_done",
+	"BIS_downwardspiral.tem_anizay_done",
+	"BIS_SEA%20AND%20SAND.zargabad_done",
+	"BIS_holdingoasis.tem_kujari_done",
+	"BIS_AIRDROP.Altis_done",
+	"BIS_pickup.Altis_done",
+	"BIS_RG_Operation_PorewitII.chernarus_done",
+	"BIS_Operation%20Bittersweet.chernarus_summer_done",
+	"BIS_WarCrimesV1.zargabad_done",
+	"BIS_Operation%20Chaser%201.Tanoa_done",
+	"BIS_RG_Operation_Leaf_Cutter.Tanoa_done",
+	"BIS_wooddunehopping.Woodland_ACR_done",
+	"BIS_TrackedAllTheWay.saralite_done",
+	"BIS_darkstar.Tanoa_done",
+	"BIS_Badmoonrising.Cam_Lao_Nam_done",
+	"BIS_Lucifer.Woodland_ACR_done",
+	"BIS_WarmRunnings.takistan_done"
+};
+playedKeys[]=
+{
+	"BIS_Showcase_FiringFromVehicles.Altis_done"
+};
+sceneComplexity=400000;
+shadowZDistance=100;
+viewDistance=1000;
+preferredObjectViewDistance=800;
+pipViewDistance=500;
+terrainGrid=25;
+volumeCD=10;
+volumeFX=10;
+volumeSpeech=10;
+volumeVoN=10;
+vonRecThreshold=0.029999999;
+volumeMapDucking=1;

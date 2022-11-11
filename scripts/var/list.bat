@@ -1,0 +1,7 @@
+@echo off
+SETLOCAL ENABLEDELAYEDEXPANSION
+
+FOR /L %%i IN (1,1,%NVARS%) DO (
+  SET VAR=!VARS[%%i]!
+  SET !VAR!
+)
